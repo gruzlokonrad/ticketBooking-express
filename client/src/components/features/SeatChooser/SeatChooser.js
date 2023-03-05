@@ -24,7 +24,7 @@ const SeatChooser = ({ chosenDay, chosenSeat, updateSeat }) => {
   }, [dispatch, intervalSeatRefresh])
 
   const isTaken = (seatId) => {
-    return (seats.some(item => (item.seat === seatId && item.day == chosenDay)));
+    return (seats.some(item => (item.seat === seatId && String(item.day) === String(chosenDay))));
   }
 
   const prepareSeat = (seatId) => {
